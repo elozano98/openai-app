@@ -1,4 +1,6 @@
+import openai
 import streamlit as st
+
 from sections import load_files_section, load_fine_tunes_section
 
 
@@ -15,4 +17,5 @@ def run() -> None:
 
 
 if __name__ == "__main__":
+    openai.api_key = st.secrets["OPENAI_API_KEY"]
     run()

@@ -128,7 +128,7 @@ class FineTune:
     def _show_result_metrics(self) -> None:
         response = requests.get(
             f"https://api.openai.com/v1/files/{self.result_file_id}/content",
-            headers={"Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}"},
+            headers={"Authorization": f"Bearer {openai.api_key}"},
         )
         assert response.status_code == 200
         accuracy, f1_score = response.content.decode().split("\n")[-2].split(",")[-2:]
