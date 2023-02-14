@@ -7,7 +7,7 @@ from sections import load_files_section, load_fine_tunes_section, load_models_se
 def run() -> None:
     st.title("OpenAI")
 
-    section = st.sidebar.selectbox("", ["Models", "Fine-tunes", "Files"])
+    section = st.sidebar.selectbox("", ["Fine-tunes", "Files", "Models"])
 
     if section == "Fine-tunes":
         load_fine_tunes_section()

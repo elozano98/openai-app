@@ -1,14 +1,16 @@
 import streamlit as st
-
-from actions import list_files, list_fine_tunes, list_models, run_inference
+from actions import list_files, list_fine_tunes, list_models, run_inference, train
 
 
 def load_fine_tunes_section() -> None:
     st.subheader("Fine-tunes")
-    action = st.sidebar.selectbox("", ["List"])
+    action = st.sidebar.selectbox("", ["List", "Train"])
 
     if action == "List":
         list_fine_tunes()
+    else:
+        assert action == "Train"
+        train()
 
 
 def load_models_section() -> None:
